@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Lab2_Client": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ApiKey": "fe1ff1568156664e85f3428eee8b4da0"
+      }
+    }
+  }
+}

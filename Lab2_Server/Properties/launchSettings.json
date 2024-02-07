@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Lab2_Server": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "MONGODB_URI": "mongodb+srv://alexnormandi:XAtefDKjHQMWvmfz@nalzurin.qd9cicy.mongodb.net/?retryWrites=true&w=majority"
+      }
+    }
+  }
+}
