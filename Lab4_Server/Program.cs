@@ -21,7 +21,7 @@ try
 
         NetworkStream stream = tcpClient.GetStream();
 
-        byte[] buffer = new byte[1024];
+        byte[] buffer = new byte[2048];
         int bytesRead = stream.Read(buffer, 0, buffer.Length);
         byte[] receivedData = new byte[bytesRead];
         Array.Copy(buffer, receivedData, bytesRead);
@@ -61,7 +61,7 @@ void SavePacketDetailsToJson(uint packetId, DateTime dateTimeStamp, string base6
         Base64Image = base64Image
     };
     string json = JsonConvert.SerializeObject(packetDetails);
-    string fileName = $"{packetId}.json";
+    string fileName = $"packets\\{packetId}.json";
     File.WriteAllText(fileName, json);
     Console.WriteLine($"Packet details saved to: {fileName}");
 }

@@ -66,14 +66,20 @@ string CreateAndEncodeImage()
         }
     }
 
-    
-    MemoryStream memoryStream = new MemoryStream();
-    image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
 
-    
-    byte[] imageBytes = memoryStream.ToArray();
-    string base64Image = Convert.ToBase64String(imageBytes);
+    using (MemoryStream memoryStream = new MemoryStream())
+    {
+        // Save the image to the MemoryStream using the Png format
+        image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
 
-    return base64Image;
+        // Convert the image to a byte array
+        byte[] imageBytes = memoryStream.ToArray();
+
+        // Encode the byte array to base64
+        string base64Image = Convert.ToBase64String(imageBytes);
+        Console.WriteLine(base64Image);
+
+        return base64Image;
+    }
 }
 
